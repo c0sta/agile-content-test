@@ -29,3 +29,8 @@ export interface Episode {
   Duration: number
   Image: string
 }
+
+export interface Season {
+  SeasonNumber: number
+  Episodes: Episode[]
+}
