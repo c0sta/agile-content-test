@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const ShowContent = styled.div`
   display: grid;
@@ -6,4 +6,4 @@ export const ShowContent = styled.div`
   background-color: aliceblue;
   width: 100%;
   height: 100%;
-`;
+`

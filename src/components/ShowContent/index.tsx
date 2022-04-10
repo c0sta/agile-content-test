@@ -1,4 +1,4 @@
-import * as SC from "./styles";
+import * as SC from './styles'
 
 const ShowContent: React.FC = () => {
   return (
@@ -6,7 +6,7 @@ const ShowContent: React.FC = () => {
       <div>Content and Background</div>
       <div>Seasons tabs </div>
     </SC.ShowContent>
-  );
-};
+  )
+}
 
-export default ShowContent;
+export default ShowContent

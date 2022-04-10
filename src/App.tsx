@@ -1,6 +1,6 @@
-import ShowDetails from "./pages/ShowDetails";
-import "./App.css";
+import ShowDetails from './pages/ShowDetails'
+import './App.css'
 
-const App = () => <ShowDetails />;
+const App = () => <ShowDetails />
 
-export default App;
+export default App
