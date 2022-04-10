@@ -23,7 +23,7 @@ jobs:
           node-version: 14.19
 
       - name: Install deps
-        run: npm ci
+        run: npm i
 
       - name: Check linting
         run: npm run lint
