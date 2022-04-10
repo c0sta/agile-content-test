@@ -1,11 +1,10 @@
 import { useEffect, useState } from 'react'
+import Swal from 'sweetalert2'
+import * as SC from './styles'
 import { Show } from '../../interfaces'
 import { getOneShowService } from '../../services/shows/get-one'
-import * as SC from './styles'
-import Swal from 'sweetalert2'
 
 const ShowContent: React.FC = () => {
-  const [isLoading, setIsLoading] = useState(true)
   const [show, setShow] = useState<Show | null>(null)
 
   const loadShowContent = () =>
@@ -20,7 +19,6 @@ const ShowContent: React.FC = () => {
           text: `${error}`,
         }),
       )
-      .finally(() => setTimeout(() => setIsLoading(false), 2000))
 
   useEffect(() => {
     loadShowContent()
