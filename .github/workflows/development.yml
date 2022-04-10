@@ -1,0 +1,32 @@
+name: Development CI
+
+on:
+  pull_request:
+    branches:
+      - development
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    name: Validate pull request
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v2.5.1
+        with:
+          node-version: 14.19
+
+      - name: Install deps
+        run: npm ci
+
+      - name: Check linting
+        run: npm run lint
+
+      - name: Check commit messages
+        uses: wagoid/commitlint-github-action@v4
