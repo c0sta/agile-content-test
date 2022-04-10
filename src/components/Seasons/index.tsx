@@ -17,6 +17,7 @@ const Seasons = () => {
   useEffect(() => {
     loadEpisodes()
   }, [])
+
   return (
     <SC.Seasons>
       <SC.SeasonsHeader>
@@ -39,12 +40,3 @@ const Seasons = () => {
 }
 
 export default Seasons
-
-/**
- * Tabs component
- * 1 - Names of the tabs - Array<string>
- * 2 - hasIcon - Boolean
- * 3 - Icon - React.Component | null
- * OBS -> Tab size and borderBottom size must follow the TabName size
- * 4 - TabContent - React.Component
- */
