@@ -3,6 +3,7 @@ import Swal from 'sweetalert2'
 import * as SC from './styles'
 import { Show } from '../../interfaces'
 import { getOneShowService } from '../../services/shows/get-one'
+import Seasons from '../Seasons'
 
 const ShowContent: React.FC = () => {
   const [show, setShow] = useState<Show | null>(null)
@@ -32,8 +33,7 @@ const ShowContent: React.FC = () => {
           {'80% Indicado / Terror / 2015 / EUA / 14'.toUpperCase()}
         </SC.ShowContentHeaderDescription>
       </SC.ShowContentHeader>
-
-      <div>Seasons tabs </div>
+      <Seasons />
     </SC.ShowContent>
   )
 }
