@@ -17,7 +17,7 @@ export const Action = styled.button`
   align-items: center;
   justify-items: center;
   justify-content: space-between;
-  height: 3.5rem;
+  height: 4rem;
   width: 4rem;
   background: none;
   border: none;
@@ -26,12 +26,12 @@ export const Action = styled.button`
   }
 `
 export const ActionIcon = styled.img`
-  height: 30px;
-  width: 30px;
+  height: 32px;
+  width: 32px;
 `
 
 export const ActionLabel = styled.span`
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   white-space: nowrap;
   color: #aaa;
 `
@@ -47,6 +47,6 @@ export const Synopsis = styled.section`
     font-size: 1.3rem;
   }
   p {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
   }
 `

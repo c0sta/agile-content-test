@@ -17,7 +17,8 @@ export const TabsHeader = styled.header<TabProps>`
   width: 100%;
   overflow-x: auto;
   overflow-y: hidden;
-  min-height: 60px;
+  height: 64px;
+  padding: 8px 0px;
 `
 
 export const Tab = styled.button<TabProps>`
