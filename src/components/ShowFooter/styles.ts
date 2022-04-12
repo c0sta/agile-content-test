@@ -5,4 +5,5 @@ export const ShowFooter = styled.div`
   overflow-y: auto;
   height: 100%;
   background: linear-gradient(to right, #12171a, #000);
+  padding: 16px 64px;
 `
