@@ -15,6 +15,6 @@ export const NoContentIcon = styled.img`
 `
 
 export const NoContentTitle = styled.h1`
-  font-size: 2rem;
+  font-size: 1.6rem;
   color: #aaaa;
 `
