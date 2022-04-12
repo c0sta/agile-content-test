@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const General = styled.section`
+export const GeneralTab = styled.section`
   display: flex;
   width: 100%;
 `
@@ -16,9 +16,9 @@ export const Action = styled.button`
   flex-direction: column;
   align-items: center;
   justify-items: center;
-  justify-content: space-evenly;
-  height: 4rem;
-  width: 6rem;
+  justify-content: space-between;
+  height: 3.5rem;
+  width: 4rem;
   background: none;
   border: none;
   &:hover {
@@ -31,7 +31,8 @@ export const ActionIcon = styled.img`
 `
 
 export const ActionLabel = styled.span`
-  font-size: 1rem;
+  font-size: 0.8rem;
+  white-space: nowrap;
   color: #aaa;
 `
 
@@ -46,6 +47,6 @@ export const Synopsis = styled.section`
     font-size: 1.3rem;
   }
   p {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
   }
 `
