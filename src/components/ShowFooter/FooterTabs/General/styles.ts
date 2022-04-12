@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const General = styled.section`
+export const GeneralTab = styled.section`
   display: flex;
   width: 100%;
 `
@@ -16,9 +16,9 @@ export const Action = styled.button`
   flex-direction: column;
   align-items: center;
   justify-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
   height: 4rem;
-  width: 6rem;
+  width: 4rem;
   background: none;
   border: none;
   &:hover {
@@ -26,12 +26,13 @@ export const Action = styled.button`
   }
 `
 export const ActionIcon = styled.img`
-  height: 30px;
-  width: 30px;
+  height: 32px;
+  width: 32px;
 `
 
 export const ActionLabel = styled.span`
-  font-size: 1rem;
+  font-size: 0.9rem;
+  white-space: nowrap;
   color: #aaa;
 `
 

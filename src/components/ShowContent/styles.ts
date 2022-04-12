@@ -10,7 +10,13 @@ export const ShowContent = styled.div<ShowContentProps>`
   background-color: aliceblue;
   width: 100%;
   height: 100%;
-  background: linear-gradient(rgba(0, 0, 0, 0.527), rgba(0, 0, 0, 0.5)),
+  background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0),
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0)
+    ),
+    linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4)),
     url(${props => props.backgroundUrl}) no-repeat center fixed;
   background-size: cover;
 `
