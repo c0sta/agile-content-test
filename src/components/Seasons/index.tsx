@@ -32,7 +32,7 @@ const Seasons = () => {
       </SC.SeasonsHeader>
       <SC.SeasonsBody>
         {seasons.map(season => (
-          <div>T{season.SeasonNumber}</div>
+          <div key={season.SeasonNumber}>T{season.SeasonNumber}</div>
         ))}
       </SC.SeasonsBody>
     </SC.Seasons>

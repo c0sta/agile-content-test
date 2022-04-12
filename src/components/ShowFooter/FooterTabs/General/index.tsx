@@ -1,24 +1,16 @@
-import { useEffect, useState } from 'react'
+import { useContext } from 'react'
 import * as SC from './styles'
 import AddIcon from '../../../../assets/icons/add-gray-s.svg'
 import SadIcon from '../../../../assets/icons/sad-gray-w.svg'
 import PlayIcon from '../../../../assets/icons/rec-gray-s.svg'
 import ShareIcon from '../../../../assets/icons/share-gray-s.svg'
-import { getOneShowService } from '../../../../services/shows/get-one'
+import { ShowContext } from '../../../../context/show-context'
 
-const General: React.FC = () => {
-  const [synopsis, setSynopsis] = useState('')
+const GeneralTab: React.FC = () => {
+  const { show } = useContext(ShowContext)
 
-  const loadSynopsis = () =>
-    getOneShowService({ id: 'SHOW123.json' }).then(({ data }) =>
-      setSynopsis(data.Synopsis),
-    )
-
-  useEffect(() => {
-    loadSynopsis()
-  }, [])
   return (
-    <SC.General>
+    <SC.GeneralTab>
       <SC.Actions>
         <SC.Action>
           <SC.ActionIcon
@@ -51,10 +43,10 @@ const General: React.FC = () => {
       </SC.Actions>
       <SC.Synopsis>
         <h3>SINOPSE</h3>
-        <p>{synopsis}</p>
+        <p>{show?.Synopsis}</p>
       </SC.Synopsis>
-    </SC.General>
+    </SC.GeneralTab>
   )
 }
 
-export default General
+export default GeneralTab

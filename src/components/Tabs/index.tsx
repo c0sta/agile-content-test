@@ -20,6 +20,7 @@ const Tabs: React.FC<TabsProps> = ({ tabs, showIcon }) => {
       <SC.TabsHeader>
         {tabs.map((tab, index) => (
           <SC.Tab
+            key={tab.title}
             active={activeTab === index}
             onClick={() => setActiveTab(index)}
           >

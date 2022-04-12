@@ -1,6 +1,7 @@
 import Tabs from '../Tabs'
 import * as SC from './styles'
 import { General, Cast } from './FooterTabs'
+import NoContent from '../NoContent'
 
 const tabs = [
   {
@@ -13,7 +14,7 @@ const tabs = [
   },
   {
     title: 'Principais Premios',
-    content: <div>Premios</div>,
+    content: <NoContent />,
   },
 ]
 const ShowFooter: React.FC = () => (

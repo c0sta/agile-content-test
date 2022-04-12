@@ -1,7 +1,23 @@
+import { useContext } from 'react'
+import { ShowContext } from '../../../../context/show-context'
 import * as SC from './styles'
 
-const Cast: React.FC = () => {
-  return <SC.Cast>Cast</SC.Cast>
+const CastTab: React.FC = () => {
+  const { show } = useContext(ShowContext)
+  return (
+    <SC.CastTab>
+      <SC.CastList>
+        {show?.Cast.length
+          ? show.Cast.map(({ ID, Name }) => (
+              <SC.CastListItem key={ID}>
+                <h1>{ID}</h1>
+                <h3>{Name}</h3>
+              </SC.CastListItem>
+            ))
+          : null}
+      </SC.CastList>
+    </SC.CastTab>
+  )
 }
 
-export default Cast
+export default CastTab
