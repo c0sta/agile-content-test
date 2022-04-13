@@ -18,7 +18,7 @@ export const Action = styled.button`
   justify-items: center;
   justify-content: space-between;
   height: 4rem;
-  width: 4rem;
+  width: 5rem;
   background: none;
   border: none;
   &:hover {
