@@ -1,15 +1,15 @@
 import styled from 'styled-components'
 
-export const Seasons = styled.nav`
+export const ShowSeasons = styled.div`
   height: 100%;
   width: 100%;
-  overflow-y: auto;
+  overflow-y: hidden;
   background: linear-gradient(
     to right,
     rgba(0, 0, 0, 0),
-    rgba(0, 0, 0, 0.5),
-    rgba(0, 0, 0, 0.7),
-    rgba(0, 0, 0)
+    rgba(0, 0, 0, 0.6),
+    rgba(0, 0, 0, 0.8),
+    rgb(0, 0, 0)
   );
 `
 export const CloseButton = styled.button`
@@ -17,11 +17,14 @@ export const CloseButton = styled.button`
   border: none;
   cursor: pointer;
 `
-export const SeasonsHeader = styled.header`
+export const ShowSeasonsHeader = styled.header`
   display: flex;
   align-items: center;
   justify-content: flex-end;
   padding: 16px 32px;
+  width: auto;
 `
 
-export const SeasonsBody = styled.div``
+export const ShowSeasonsBody = styled.div`
+  width: 90%;
+`

@@ -3,31 +3,33 @@ import styled from 'styled-components'
 export const Tabs = styled.nav`
   display: flex;
   flex-direction: column;
-  /* margin: 16px 64px; */
   width: 100%;
 `
 interface TabProps {
   active?: boolean
   align?: 'left' | 'center' | 'right'
+  fullWidth?: boolean
+  padding?: string
 }
 
 export const TabsHeader = styled.header<TabProps>`
+  box-sizing: border-box;
   display: flex;
-  justify-content: space-between;
+  gap: 32px;
   width: 100%;
   overflow-x: auto;
   overflow-y: hidden;
   height: 64px;
-  padding: 8px 0px;
+  /* border-bottom: 2px solid #aaa; */
 `
 
 export const Tab = styled.button<TabProps>`
-  width: 100%;
+  height: 100%;
+  width: ${props => (props.fullWidth ? '100%' : 'auto')};
   text-align: ${props => props.align || 'left'};
   background: none;
   border: none;
-  border-bottom: ${props =>
-    props.active ? '2px solid #2e754b' : '2px solid #aaa'};
+  border-bottom: ${props => (props.active ? '2px solid #2e754b' : '')};
   color: ${props => (props.active ? '#fafdfd' : '#aaa')};
   font-size: 1.3rem;
   white-space: nowrap;
@@ -37,8 +39,9 @@ export const Tab = styled.button<TabProps>`
     cursor: pointer;
   }
 `
-
-export const TabContent = styled.section`
+export const TabContent = styled.section<TabProps>`
   display: flex;
-  padding: 32px 0px;
+  padding: ${props => props.padding || '0px'};
+  overflow-x: hidden;
+  overflow-y: auto;
 `

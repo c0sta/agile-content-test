@@ -1,14 +1,14 @@
-import { useContext, useEffect, useState } from 'react'
+import { useContext, useEffect } from 'react'
 import Swal from 'sweetalert2'
-import { ThreeDots } from 'react-loader-spinner'
 import * as SC from './styles'
 import { getOneShowService } from '../../services/shows/get-one'
-import Seasons from '../Seasons'
+import ShowSeasons from '../ShowSeasons'
 import { ShowContext } from '../../context/show-context'
+import OverlayLoading from '../ui/OverlayLoading'
 
 const ShowContent: React.FC = () => {
-  const [isLoading, setIsLoading] = useState(true)
-  const { show, setShow } = useContext(ShowContext)
+  const { show, setShow, setOverlayLoading, overlayLoading } =
+    useContext(ShowContext)
 
   const loadShowContent = () =>
     getOneShowService({ id: 'SHOW123.json' })
@@ -22,7 +22,7 @@ const ShowContent: React.FC = () => {
           text: `${error}`,
         }),
       )
-      .finally(() => setIsLoading(false))
+      .finally(() => setTimeout(() => setOverlayLoading(false), 1000))
 
   useEffect(() => {
     loadShowContent()
@@ -30,8 +30,8 @@ const ShowContent: React.FC = () => {
 
   return (
     <div>
-      {isLoading ? (
-        <ThreeDots color="#2e754b" height={80} width={80} />
+      {overlayLoading ? (
+        <OverlayLoading />
       ) : (
         <SC.ShowContent backgroundUrl={show?.Images.Background as string}>
           <SC.ShowContentHeader>
@@ -40,7 +40,7 @@ const ShowContent: React.FC = () => {
               {'80% Indicado / Terror / 2015 / EUA / 14'.toUpperCase()}
             </SC.ShowContentHeaderDescription>
           </SC.ShowContentHeader>
-          <Seasons />
+          <ShowSeasons />
         </SC.ShowContent>
       )}
     </div>

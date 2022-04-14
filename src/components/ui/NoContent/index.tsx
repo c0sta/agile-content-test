@@ -1,5 +1,5 @@
 import * as SC from './styles'
-import NoContentIcon from '../../assets/icons/no-content.svg'
+import NoContentIcon from '../../../assets/icons/no-content.svg'
 
 const NoContent: React.FC = () => {
   return (

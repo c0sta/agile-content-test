@@ -1,7 +1,7 @@
-import Tabs from '../Tabs'
+import Tabs from '../ui/Tabs'
 import * as SC from './styles'
 import { General, Cast } from './FooterTabs'
-import NoContent from '../NoContent'
+import NoContent from '../ui/NoContent'
 
 const tabs = [
   {
@@ -13,13 +13,13 @@ const tabs = [
     content: <Cast />,
   },
   {
-    title: 'Principais Premios',
+    title: 'Premios principais',
     content: <NoContent />,
   },
 ]
 const ShowFooter: React.FC = () => (
   <SC.ShowFooter>
-    <Tabs tabs={tabs} showIcon />
+    <Tabs tabs={tabs} showIcon padding="32px 0px" />
   </SC.ShowFooter>
 )
 

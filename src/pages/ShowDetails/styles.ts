@@ -5,4 +5,5 @@ export const ShowDetails = styled.div`
   grid-template-rows: 60% 40%;
   width: 100%;
   height: 100%;
+  overflow: hidden;
 `
