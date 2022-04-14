@@ -4,23 +4,31 @@ import * as SC from './styles'
 import CloseSearchIcon from '../../assets/icons/close-search-w.svg'
 import { Season } from '../../interfaces'
 import groupEpisodesBySeason from '../../helpers/group-episodes'
+import Tabs from '../ui/Tabs'
+import SeasonsList from './SeasonsList'
 
-const Seasons = () => {
-  const [seasons, setSeasons] = useState<Season[]>([])
+const ShowSeasons: React.FC = () => {
+  const [showSeasons, setShowSeasons] = useState<Season[]>([])
 
   const loadEpisodes = () =>
     getEpisodesByShowService({ id: 'SHOW123.json' }).then(({ data }) => {
       const episodesBySeason = groupEpisodesBySeason(data)
-      setSeasons(episodesBySeason)
+      setShowSeasons(episodesBySeason)
     })
+
+  const generateSeasonTabs = () =>
+    showSeasons.map(season => ({
+      title: `T${season.SeasonNumber}`,
+      content: <SeasonsList episodes={season.Episodes} />,
+    }))
 
   useEffect(() => {
     loadEpisodes()
   }, [])
 
   return (
-    <SC.Seasons>
-      <SC.SeasonsHeader>
+    <SC.ShowSeasons>
+      <SC.ShowSeasonsHeader>
         <SC.CloseButton type="button">
           <img
             src={CloseSearchIcon}
@@ -29,14 +37,12 @@ const Seasons = () => {
             width={25}
           />
         </SC.CloseButton>
-      </SC.SeasonsHeader>
-      <SC.SeasonsBody>
-        {seasons.map(season => (
-          <div key={season.SeasonNumber}>T{season.SeasonNumber}</div>
-        ))}
-      </SC.SeasonsBody>
-    </SC.Seasons>
+      </SC.ShowSeasonsHeader>
+      <SC.ShowSeasonsBody>
+        <Tabs tabs={generateSeasonTabs()} padding="8px 0px" />
+      </SC.ShowSeasonsBody>
+    </SC.ShowSeasons>
   )
 }
 
-export default Seasons
+export default ShowSeasons

@@ -1,5 +1,6 @@
 import { useState } from 'react'
-import LogoTelecineIcon from '../../assets/icons/logo-telecine.svg'
+import LogoTelecineIcon from '../../../assets/icons/logo-telecine.svg'
+import NoContent from '../NoContent'
 import * as SC from './styles'
 
 interface Tab {
@@ -10,11 +11,12 @@ interface Tab {
 interface TabsProps {
   tabs: Tab[]
   showIcon?: boolean
+  padding?: string
 }
 
-const Tabs: React.FC<TabsProps> = ({ tabs, showIcon }) => {
+const Tabs: React.FC<TabsProps> = ({ tabs, showIcon, padding }) => {
   const [activeTab, setActiveTab] = useState(0)
-
+  if (!tabs.length) return <NoContent />
   return (
     <SC.Tabs>
       <SC.TabsHeader>
@@ -28,7 +30,7 @@ const Tabs: React.FC<TabsProps> = ({ tabs, showIcon }) => {
           </SC.Tab>
         ))}
         {showIcon && (
-          <SC.Tab align="right">
+          <SC.Tab align="right" fullWidth>
             <img
               src={LogoTelecineIcon}
               alt="Telecine logo na cor branco"
@@ -38,7 +40,7 @@ const Tabs: React.FC<TabsProps> = ({ tabs, showIcon }) => {
           </SC.Tab>
         )}
       </SC.TabsHeader>
-      <SC.TabContent>{tabs[activeTab].content}</SC.TabContent>
+      <SC.TabContent padding={padding}>{tabs[activeTab].content}</SC.TabContent>
     </SC.Tabs>
   )
 }

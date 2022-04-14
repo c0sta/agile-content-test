@@ -5,7 +5,6 @@ export const NoContentContainer = styled.section`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 250px;
   width: 100%;
 `
 

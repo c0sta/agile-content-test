@@ -7,12 +7,12 @@ const groupEpisodesBySeason = (episodes: Episode[]): Season[] => {
   )
   const groupedEpisodes = groupBy(filteredEpisodes, 'SeasonNumber')
 
-  const formatedSeasons = Object.keys(groupedEpisodes).map(seasonKey => ({
+  const formatedShowSeasons = Object.keys(groupedEpisodes).map(seasonKey => ({
     SeasonNumber: Number(seasonKey),
     Episodes: groupedEpisodes[seasonKey],
   }))
 
-  return formatedSeasons
+  return formatedShowSeasons
 }
 
 export default groupEpisodesBySeason
