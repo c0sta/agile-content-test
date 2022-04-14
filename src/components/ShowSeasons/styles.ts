@@ -1,15 +1,15 @@
 import styled from 'styled-components'
 
-export const ShowSeasons = styled.nav`
+export const ShowSeasons = styled.div`
   height: 100%;
-  overflow-y: auto;
+  width: 100%;
+  overflow-y: hidden;
   background: linear-gradient(
     to right,
     rgba(0, 0, 0, 0),
-    rgba(0, 0, 0, 0.4),
     rgba(0, 0, 0, 0.6),
     rgba(0, 0, 0, 0.8),
-    rgba(0, 0, 0)
+    rgb(0, 0, 0)
   );
 `
 export const CloseButton = styled.button`
@@ -26,6 +26,5 @@ export const ShowSeasonsHeader = styled.header`
 `
 
 export const ShowSeasonsBody = styled.div`
-  display: flex;
-  width: 50%;
+  width: 90%;
 `
