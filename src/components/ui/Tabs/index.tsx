@@ -11,9 +11,10 @@ interface Tab {
 interface TabsProps {
   tabs: Tab[]
   showIcon?: boolean
+  padding?: string
 }
 
-const Tabs: React.FC<TabsProps> = ({ tabs, showIcon }) => {
+const Tabs: React.FC<TabsProps> = ({ tabs, showIcon, padding }) => {
   const [activeTab, setActiveTab] = useState(0)
   if (!tabs.length) return <NoContent />
   return (
@@ -39,7 +40,7 @@ const Tabs: React.FC<TabsProps> = ({ tabs, showIcon }) => {
           </SC.Tab>
         )}
       </SC.TabsHeader>
-      <SC.TabContent>{tabs[activeTab].content}</SC.TabContent>
+      <SC.TabContent padding={padding}>{tabs[activeTab].content}</SC.TabContent>
     </SC.Tabs>
   )
 }

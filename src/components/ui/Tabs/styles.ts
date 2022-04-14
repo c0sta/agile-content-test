@@ -9,6 +9,7 @@ interface TabProps {
   active?: boolean
   align?: 'left' | 'center' | 'right'
   fullWidth?: boolean
+  padding?: string
 }
 
 export const TabsHeader = styled.header<TabProps>`
@@ -18,7 +19,7 @@ export const TabsHeader = styled.header<TabProps>`
   width: 100%;
   overflow-x: auto;
   overflow-y: hidden;
-  min-height: 64px;
+  height: 64px;
   /* border-bottom: 2px solid #aaa; */
 `
 
@@ -38,10 +39,9 @@ export const Tab = styled.button<TabProps>`
     cursor: pointer;
   }
 `
-
-export const TabContent = styled.section`
+export const TabContent = styled.section<TabProps>`
   display: flex;
-  padding: 32px 0px;
+  padding: ${props => props.padding || '0px'};
   overflow-x: hidden;
   overflow-y: auto;
 `
