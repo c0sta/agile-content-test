@@ -28,10 +28,14 @@ export const Action = styled.button`
 export const ActionIcon = styled.img`
   height: 32px;
   width: 32px;
+  &:hover {
+    cursor: pointer;
+    color: #2e754b;
+  }
 `
 
 export const ActionLabel = styled.span`
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   white-space: nowrap;
   color: #aaa;
 `

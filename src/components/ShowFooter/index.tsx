@@ -19,7 +19,7 @@ const tabs = [
 ]
 const ShowFooter: React.FC = () => (
   <SC.ShowFooter>
-    <Tabs tabs={tabs} showIcon />
+    <Tabs tabs={tabs} showIcon padding="32px 0px" />
   </SC.ShowFooter>
 )
 
