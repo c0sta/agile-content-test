@@ -15,19 +15,15 @@
 -->
 
 <p align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="src/assets/react_typescript.png" alt="Logo" width="auto" height="auto">
+  <a href="https://agile-content-test.netlify.app/">
+    <img src="https://sp-ao.shortpixel.ai/client/to_webp,q_glossy,ret_img,w_595,h_102/https://www.agilecontent.com/tv/wp-content/uploads/2022/01/agile_content_CMYK_white_green.png" alt="Logo" width="500" height="100">
   </a>
 
   <p align="center">
-   This is my personal boilerplate for projects with React + TS.
+   Teste técnico para vaga de Desenvolvedor Front-end 
     <br />
     <br />
-    <a href="#">View Demo</a>
-    ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Request Feature</a>
+    <a href="https://agile-content-test.netlify.app/">View Demo</a>
   </p>
 </p>
 
@@ -35,13 +31,26 @@
 
 ## About The Project
 
-This boilerplate was build using [Vite.js](https://vitejs.dev/) because it's lighter than the usual [create-react-app](https://create-react-app.dev/). Read [this](https://medium.com/codex/you-should-choose-vite-over-cra-for-react-apps-heres-why-47e2e7381d13) if you want to know more about.
+O teste consiste no desenvolvimento de uma página que detalha as informações de uma série chamada Penny Dreadful.
 
 ## Built With
 
-In this boilerplate I've added the base configurations for:
+Para o desenvolvimento desse projeto eu utilizei as seguintes ferramentas:
 
-- ESLint +Prettier
-- Commitlint + Husky
-- Simple Docker compose configuration
-- Simple CI pipeline to validate the pull requests on `development` branch
+- [React](https://reactjs.org/)
+- [Typescript](https://www.typescriptlang.org/)
+- [Styled Components](https://styled-components.com/)
+
+<!-- GETTING STARTED -->
+
+## Getting Started
+
+É necessário que você tenha o [Docker](https://docs.docker.com/get-docker/) e [Docker Compose](https://docs.docker.com/compose/install/) instalados localmente em sua máquina.
+
+### Installation
+
+1. Setup project
+   ```sh
+   docker-compose up
+   ```
+2. Open URL - `localhost:3000`
